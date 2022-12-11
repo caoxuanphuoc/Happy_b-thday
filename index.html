@@ -24,7 +24,7 @@
             background-image: radial-gradient(circle at center bottom, #e9b64b, #c76075 15%, #0d0d4b 75%, #190e14 90%);
             z-index: 99;
         }
-
+      
         div#beach,
         canvas#canvas {
             position: absolute;
@@ -576,7 +576,7 @@
 
 <body>
   
-
+    <audio controls autoplay hidden> <source src="music.mp3" type="audio/mpeg"> </audio>
     <canvas id="canvas"></canvas>
     <div id="merrywrap" class="merrywrap">
         <div class="giftbox">
@@ -601,7 +601,7 @@
             hh = h / 2,
 
             opts = {
-                strings: ['HAPPY', 'BIRTHDAY!', 'CYBERSOFT'],
+                strings: ['HAPPY', 'BIRTHDAY!', 'Thanh Ngọc'],
                 charSize: 120,
                 charSpacing: 120,
                 lineHeight: 120,
@@ -1265,6 +1265,7 @@
                 merrywrap.className = 'merrywrap step-' + step;
             }
             function openBox() {
+
                 if (step === 1) {
                     box.removeEventListener("click", openBox, false);
                 }
