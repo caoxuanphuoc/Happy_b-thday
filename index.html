@@ -575,8 +575,8 @@
 </head>
 
 <body>
-  
-    <audio controls autoplay hidden> <source src="music.mp3" type="audio/mpeg"> </audio>
+  //autoplay
+    <audio controls  hidden  id="mymusic"> <source src="music.mp3" type="audio/mpeg"> </audio>
     <canvas id="canvas"></canvas>
     <div id="merrywrap" class="merrywrap">
         <div class="giftbox">
@@ -1259,17 +1259,19 @@
             var stepMinutes = [500, 500, 200, 200];
             function init() {
                 box.addEventListener("click", openBox, false);
+               
             }
             function stepClass(step) {
                 merrywrap.className = 'merrywrap';
                 merrywrap.className = 'merrywrap step-' + step;
             }
             function openBox() {
-
+                
                 if (step === 1) {
                     box.removeEventListener("click", openBox, false);
                 }
                 stepClass(step);
+               
                 if (step === 3) {
                 }
                 if (step === 4) {
@@ -1278,6 +1280,7 @@
                 }
                 setTimeout(openBox, stepMinutes[step - 1]);
                 step++;
+                
             }
 
             init();
@@ -1285,8 +1288,9 @@
         }
 
         function reveal() {
+            var m = document.getElementById("mymusic");
+            m.play();
             document.querySelector('.merrywrap').style.backgroundColor = 'transparent';
-
             loop();
 
             var w, h;
